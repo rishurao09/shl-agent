@@ -29,3 +29,12 @@ def chat(query: Query):
         })
 
     return {"response": formatted_results}
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all origins (for now)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
