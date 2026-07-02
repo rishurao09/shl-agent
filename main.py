@@ -3,6 +3,12 @@ from pydantic import BaseModel
 from catalog import search_assessments
 
 app = FastAPI()
+@app.get("/")
+def root():
+    return {
+        "message": "SHL Agent API is live 🚀",
+        "docs": "/docs"
+    }
 
 # Request body format
 class Query(BaseModel):
